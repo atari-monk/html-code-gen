@@ -3,27 +3,29 @@
 Console.WriteLine("Generating html templates...");
 
 var gen = new HtmlGen();
-var data = new List<TutorialStep>();
-data.Add(new TutorialStep(1, "Create resource group"
-    , new CodeText("az group create --name {0} --location {1}"
+var data = new List<ITutorialStepWithParams>();
+data.Add(new TutorialStepWithParams("Create resource group"
+    , new CodeWithParams[] { new CodeWithParams(1, "az group create --name {0} --location {1}"
     , new CodeParam[] {
         new CodeParam("CommonResourceGroup", "Choose your ResourceGroup name", "mark-resource-group")
         , new CodeParam("swedencentral", "Choose your Location name", "mark-location")
-    })));
-data.Add(new TutorialStep(2, "Create azure container registry"
-    , new CodeText("az acr create --resource-group {0} --name {1} --sku Basic"
+    })}));
+data.Add(new TutorialStepWithParams("Create azure container registry"
+    , new CodeWithParams[] { new CodeWithParams(2, "az acr create --resource-group {0} --name {1} --sku Basic"
     , new CodeParam[] {
         new CodeParam("CommonResourceGroup", "Choose your ResourceGroup name", "mark-resource-group")
         , new CodeParam("atari-monk-acr", "Choose your Azure Container Register name", "mark-acr")
-    })));
-data.Add(new TutorialStep(3, "Login to your azure container registry"
-    , new CodeText("az acr login --name {0}"
+    })}));
+data.Add(new TutorialStepWithParams("Login to your azure container registry"
+    , new CodeWithParams[] {new CodeWithParams(3, "az acr login --name {0}"
     , new CodeParam[] {
         new CodeParam("atari-monk-acr", "Choose your Azure Container Register name", "mark-acr")
-    })));
-data.Add(new TutorialStep(4, "Get code of example app"
-    , new CodeText("git clone https://github.com/Azure-Samples/azure-voting-app-redis.git"
-    , new CodeParam[] {})));
+    })}));
+data.Add(new TutorialStepWithNoParams("Get code of example app"
+    , new CodeWithNoParams[] {
+        new CodeWithNoParams(4, @"cd C:\atarimonk\Code")
+        , new CodeWithNoParams(5, "git clone https://github.com/Azure-Samples/azure-voting-app-redis.git")
+        , new CodeWithNoParams(5, "cd azure-voting-app-redis")}));
 
 
 // data.Add(new TutorialStep {
