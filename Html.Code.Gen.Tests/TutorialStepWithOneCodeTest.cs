@@ -4,7 +4,7 @@ using CodeParam = Html.Code.Gen.Lib.Serialize.CodeParam;
 
 namespace expected.Code.Gen.Tests;
 
-public class UnitTest2
+public class TutorialStepWithOneCodeTest
 {
     [Fact]
     public void TestTemplateWithOneCode()
@@ -12,8 +12,7 @@ public class UnitTest2
         //setup
         var data = new TutorialStep
         {
-            Title = "Create resource group"
-            ,
+            Title = "Create resource group",
             Codes = new CodeElement[] {
                 new CodeElement{
                     Nr = 1
@@ -45,12 +44,12 @@ public class UnitTest2
         expected.AppendLine("                                <p><mark class=\"mark-location\">choose your location</mark></p>");
         expected.AppendLine("                            </details>");
         expected.AppendLine("                        </aside>");
-        expected.AppendLine("                        <p>");
+        expected.AppendLine("                       <p>");
         expected.AppendLine($"                           <button onclick=\"Copy('code1')\">Copy</button>");
         expected.AppendLine($"                           <code id='code1'>");
         expected.AppendLine($"                               az group create --name <mark class=\"mark-resource-group\">CommonResourceGroup</mark> --location <mark class=\"mark-location\">swedencentral</mark>");
         expected.AppendLine("                           </code>");
-        expected.AppendLine("                        </p>");
+        expected.AppendLine("                       </p>");
         expected.AppendLine("                    </li>");
 
         //test
