@@ -1,3 +1,7 @@
 namespace Html.Code.Gen.Lib;
 
-public record FileDto(string JsonPath, string HtmlPath);
+public class FileDto
+{
+    public string? JsonPath { get; set; }
+    public string? HtmlPath { get; set; }
+}
