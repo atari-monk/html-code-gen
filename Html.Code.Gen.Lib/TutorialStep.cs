@@ -34,6 +34,7 @@ public class TutorialStep
             {
                 html.AppendLine($"                           <button onclick=\"Copy('code{code.Nr}')\">Copy</button>");
                 html.Append(code.GetCodeHtml());
+                html.Append("                           <br>");
             }
         html.AppendLine("                       </p>");
         html.AppendLine("                    </li>");
