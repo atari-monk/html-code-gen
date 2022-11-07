@@ -11,12 +11,4 @@ public class Deserizalizer
         ArgumentNullException.ThrowIfNull(data);
         return data;
     }
-
-    public List<TData> DeserializeList<TData>(string filePath)
-    {
-        var json = File.ReadAllText(filePath);
-        var data = JsonSerializer.Deserialize<List<TData>>(json);
-        ArgumentNullException.ThrowIfNull(data);
-        return data;
-    }
 }
