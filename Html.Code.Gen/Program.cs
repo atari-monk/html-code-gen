@@ -6,8 +6,10 @@ var files = new Deserizalizer().Deserialize<FileDto>(root + @"\Doc\html-code-gen
 Console.WriteLine("Generating html templates...");
 var tool = new TutorialData();
 var gen = new HtmlGen();
+var select = "cpp-compiler";
 foreach (var file in files)
 {
+    if(file.Key != select) continue;
     Console.WriteLine($"File: {file.Key}");
     Console.WriteLine($"Input: {file.Value.JsonPath}");
     ArgumentNullException.ThrowIfNull(file.Value.JsonPath);
