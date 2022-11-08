@@ -6,7 +6,10 @@ var files = new Deserizalizer().Deserialize<FileDto>(root + @"\Doc\html-code-gen
 Console.WriteLine("Generating html templates...");
 var tool = new TutorialData();
 var gen = new HtmlGen();
-var select = "cpp-compiler";
+var fileNames = new string[] { 
+    "deploy-voting-app", "aci-sql-server", "cpp-compiler" 
+    };
+var select = fileNames[1];
 foreach (var file in files)
 {
     if(file.Key != select) continue;
