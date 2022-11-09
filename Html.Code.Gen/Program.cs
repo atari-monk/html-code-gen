@@ -7,7 +7,7 @@ Console.WriteLine("Generating html templates...");
 var tool = new TutorialData();
 var gen = new HtmlGen();
 var fileNames = new string[] { 
-    "deploy-voting-app", "aci-sql-server", "cpp-compiler" 
+    "deploy-voting-app", "azure-sql-db", "cpp-compiler" 
     };
 var select = fileNames[1];
 foreach (var file in files)
