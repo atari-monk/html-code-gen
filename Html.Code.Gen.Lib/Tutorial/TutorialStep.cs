@@ -32,9 +32,8 @@ public class TutorialStep
         if (Codes != null)
             foreach (var code in Codes)
             {
-                html.AppendLine($"    <button onclick=\"Copy('code{code.Nr}')\">Copy</button>");
+                html.AppendLine($"        <button onclick=\"Copy('code{code.Nr}')\">Copy</button>");
                 html.Append(code.GetCodeHtml());
-                html.AppendLine("    <br>");
             }
         html.AppendLine("    </p>");
         html.AppendLine("</li>");

@@ -45,11 +45,11 @@ public class TutorialStepWithOneCodeTest
         expected.AppendLine("        </details>");
         expected.AppendLine("    </aside>");
         expected.AppendLine("    <p>");
-        expected.AppendLine($"    <button onclick=\"Copy('code1')\">Copy</button>");
-        expected.AppendLine($"    <code id='code1'>");
-        expected.AppendLine($"        az group create --name <mark class=\"mark-resource-group\">CommonResourceGroup</mark> --location <mark class=\"mark-location\">swedencentral</mark>");
-        expected.AppendLine("    </code>");
-        expected.AppendLine("    <br>");
+        expected.AppendLine($"        <button onclick=\"Copy('code1')\">Copy</button>");
+        expected.AppendLine($"        <code id='code1'>");
+        expected.AppendLine($"            az group create --name <mark class=\"mark-resource-group\">CommonResourceGroup</mark> --location <mark class=\"mark-location\">swedencentral</mark>");
+        expected.AppendLine("        </code>");
+        expected.AppendLine("        <br>");
         expected.AppendLine("    </p>");
         expected.AppendLine("</li>");
 

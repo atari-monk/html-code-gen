@@ -22,9 +22,10 @@ public class CodeElement
     public string GetCodeHtml()
     {
         var html = new StringBuilder();
-       html.AppendLine($"    <code id='code{Nr}'>");
-       html.AppendLine($"        {GetCodeWithMarkedParams()}");
-        html.AppendLine("    </code>");
+       html.AppendLine($"        <code id='code{Nr}'>");
+       html.AppendLine($"            {GetCodeWithMarkedParams()}");
+        html.AppendLine("        </code>");
+        html.AppendLine("        <br>");
         return html.ToString();
     }
 
