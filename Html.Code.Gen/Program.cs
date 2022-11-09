@@ -7,15 +7,18 @@ Console.WriteLine("Generating html templates...");
 var tool = new TutorialData();
 var gen = new HtmlGen();
 var fileNames = new string[] { 
-    "deploy-voting-app", "azure-sql-db", "ssms-connect-az-sql-db", "cpp-compiler" 
+    "deploy-voting-app", "azure-sql-db"
+    , "ssms-connect-az-sql-db", "db-restore-az-sql"
+    , "cpp-compiler" 
     };
-var select = fileNames[2];
+//var select = fileNames[2];
 foreach (var file in files)
 {
-    if(file.Key != select) continue;
+    //if(file.Key != select) continue;
     Console.WriteLine($"File: {file.Key}");
     Console.WriteLine($"Input: {file.Value.JsonPath}");
     ArgumentNullException.ThrowIfNull(file.Value.JsonPath);
+    if(File.Exists(file.Value.JsonPath) == false) continue;
     var data = tool.Deserialize(file.Value.JsonPath);
     ArgumentNullException.ThrowIfNull(file.Value.HtmlPath);
     File.WriteAllText(file.Value.HtmlPath, gen.GetHtml(data));
