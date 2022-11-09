@@ -2,21 +2,28 @@ using System.Text.Json;
 
 namespace Html.Code.Gen.Lib.Serialize;
 
-public class TestSerizalize
+public class TutorialSerizalizer
 {
+    private readonly string root;
+
+    public TutorialSerizalizer()
+    {
+        root = @"C:\atari-monk\Apps.Data\html-code-gen\";
+    }
+
     public void GetJsonFromTestData()
     {
-        var fileName = @"C:\atari-monk\Doc\jsonFromTestData.json";
+        var fileName = root + "jsonFromTestData.json";
         var data = new TutorialStep() { 
-            Title = "Create resource group"
+            Title = "test"
             , Codes = new CodeElement[] { 
                 new CodeElement{ 
                     Nr = 1
-                    , CodeFormat = "az group create --name {0} --location {1}"
+                    , CodeFormat = "test"
                     , CodeParams = new CodeParam[] { 
-                        new CodeParam { Name = "CommonResourceGroup"
-                            , Desc = "Choose your ResourceGroup name"
-                            , CssClass = "mark-resource-group"}}} }};
+                        new CodeParam { Name = "test"
+                            , Desc = "test"
+                            , CssClass = "test"}}} }};
         var jsonString = JsonSerializer.Serialize(data);
         File.WriteAllText(fileName, jsonString);
         var json = File.ReadAllText(fileName);
@@ -26,17 +33,17 @@ public class TestSerizalize
 
     public void GetJsonFromTestList()
     {
-        var fileName = @"C:\atari-monk\Doc\jsonFromTestList.json";
+        var fileName = root + "jsonFromTestList.json";
         var step1 = new TutorialStep() { 
-            Title = "Create resource group"
+            Title = ""
             , Codes = new CodeElement[] { 
                 new CodeElement{ 
                     Nr = 1
-                    , CodeFormat = "az group create --name {0} --location {1}"
+                    , CodeFormat = ""
                     , CodeParams = new CodeParam[] { 
-                        new CodeParam { Name = "CommonResourceGroup"
-                            , Desc = "Choose your ResourceGroup name"
-                            , CssClass = "mark-resource-group"}}} }};
+                        new CodeParam { Name = ""
+                            , Desc = ""
+                            , CssClass = ""}}} }};
         var list = new List<TutorialStep> { step1, step1 };
         var jsonString = JsonSerializer.Serialize(list);
         File.WriteAllText(fileName, jsonString);

@@ -28,25 +28,28 @@ public class TutorialStepWithManyCodesTest
             }
         };
         var expected = new StringBuilder();
-        expected.AppendLine("                    <li>");
-        expected.AppendLine("                       <p>");
-        expected.AppendLine("                           Run locally");
-        expected.AppendLine("                       </p>");
-        expected.AppendLine("                       <p>");
-        expected.AppendLine($"                           <button onclick=\"Copy('code1')\">Copy</button>");
-        expected.AppendLine($"                           <code id='code1'>");
-        expected.AppendLine($"                               docker-compose up --build -d");
-        expected.AppendLine("                           </code>");
-        expected.AppendLine($"                           <button onclick=\"Copy('code2')\">Copy</button>");
-        expected.AppendLine($"                           <code id='code2'>");
-        expected.AppendLine($"                               docker images");
-        expected.AppendLine("                           </code>");
-        expected.AppendLine($"                           <button onclick=\"Copy('code3')\">Copy</button>");
-        expected.AppendLine($"                           <code id='code3'>");
-        expected.AppendLine($"                               docker ps");
-        expected.AppendLine("                           </code>");
-        expected.AppendLine("                       </p>");
-        expected.AppendLine("                    </li>");
+        expected.AppendLine("<li>");
+        expected.AppendLine("    <p>");
+        expected.AppendLine("        Run locally");
+        expected.AppendLine("    </p>");
+        expected.AppendLine("    <p>");
+        expected.AppendLine($"        <button onclick=\"Copy('code1')\">Copy</button>");
+        expected.AppendLine($"        <code id='code1'>");
+        expected.AppendLine($"            docker-compose up --build -d");
+        expected.AppendLine("        </code>");
+        expected.AppendLine("        <br>");
+        expected.AppendLine($"        <button onclick=\"Copy('code2')\">Copy</button>");
+        expected.AppendLine($"        <code id='code2'>");
+        expected.AppendLine($"            docker images");
+        expected.AppendLine("        </code>");
+        expected.AppendLine("        <br>");
+        expected.AppendLine($"        <button onclick=\"Copy('code3')\">Copy</button>");
+        expected.AppendLine($"        <code id='code3'>");
+        expected.AppendLine($"            docker ps");
+        expected.AppendLine("        </code>");
+        expected.AppendLine("        <br>");
+        expected.AppendLine("    </p>");
+        expected.AppendLine("</li>");
 
         //test
         var actual = data.GetStepHtml();

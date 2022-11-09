@@ -33,24 +33,25 @@ public class TutorialStepWithOneCodeTest
             }
         };
         var expected = new StringBuilder();
-        expected.AppendLine("                    <li>");
-        expected.AppendLine("                       <p>");
-        expected.AppendLine("                           Create resource group");
-        expected.AppendLine("                       </p>");
-        expected.AppendLine("                       <aside>");
-        expected.AppendLine("                            <details>");
-        expected.AppendLine("                                <summary>details</summary>");
-        expected.AppendLine("                                <p><mark class=\"mark-resource-group\">choose your resource group name</mark></p>");
-        expected.AppendLine("                                <p><mark class=\"mark-location\">choose your location</mark></p>");
-        expected.AppendLine("                            </details>");
-        expected.AppendLine("                        </aside>");
-        expected.AppendLine("                       <p>");
-        expected.AppendLine($"                           <button onclick=\"Copy('code1')\">Copy</button>");
-        expected.AppendLine($"                           <code id='code1'>");
-        expected.AppendLine($"                               az group create --name <mark class=\"mark-resource-group\">CommonResourceGroup</mark> --location <mark class=\"mark-location\">swedencentral</mark>");
-        expected.AppendLine("                           </code>");
-        expected.AppendLine("                       </p>");
-        expected.AppendLine("                    </li>");
+        expected.AppendLine("<li>");
+        expected.AppendLine("    <p>");
+        expected.AppendLine("        Create resource group");
+        expected.AppendLine("    </p>");
+        expected.AppendLine("    <aside>");
+        expected.AppendLine("        <details>");
+        expected.AppendLine("            <summary>details</summary>");
+        expected.AppendLine("            <p><mark class=\"mark-resource-group\">choose your resource group name</mark></p>");
+        expected.AppendLine("            <p><mark class=\"mark-location\">choose your location</mark></p>");
+        expected.AppendLine("        </details>");
+        expected.AppendLine("    </aside>");
+        expected.AppendLine("    <p>");
+        expected.AppendLine($"    <button onclick=\"Copy('code1')\">Copy</button>");
+        expected.AppendLine($"    <code id='code1'>");
+        expected.AppendLine($"        az group create --name <mark class=\"mark-resource-group\">CommonResourceGroup</mark> --location <mark class=\"mark-location\">swedencentral</mark>");
+        expected.AppendLine("    </code>");
+        expected.AppendLine("    <br>");
+        expected.AppendLine("    </p>");
+        expected.AppendLine("</li>");
 
         //test
         var actual = data.GetStepHtml();

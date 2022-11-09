@@ -6,38 +6,38 @@ public class TutorialStep
 {
     public string? Title { get; set; }
     public CodeElement[]? Codes { get; set; }
-
+    
     public string GetStepHtml()
-    {
+    {   
         var isAsideNeeded = IsAsideNeeded();
         var html = new StringBuilder();
-        html.AppendLine("                    <li>");
-        html.AppendLine("                       <p>");
-        html.AppendLine($"                           {Title}");
-        html.AppendLine("                       </p>");
+        html.AppendLine("<li>");
+        html.AppendLine("    <p>");
+        html.AppendLine($"        {Title}");
+        html.AppendLine("    </p>");
         if (isAsideNeeded)
         {
-            html.AppendLine("                       <aside>");
-            html.AppendLine("                            <details>");
-            html.AppendLine("                                <summary>details</summary>");
+            html.AppendLine("    <aside>");
+            html.AppendLine("        <details>");
+            html.AppendLine("            <summary>details</summary>");
             if (Codes != null)
                 foreach (var code in Codes)
                 {
                     html.Append(code.GetParamDescs());
                 }
-            html.AppendLine("                            </details>");
-            html.AppendLine("                        </aside>");
+            html.AppendLine("        </details>");
+            html.AppendLine("    </aside>");
         }
-        html.AppendLine("                       <p>");
+        html.AppendLine("    <p>");
         if (Codes != null)
             foreach (var code in Codes)
             {
-                html.AppendLine($"                           <button onclick=\"Copy('code{code.Nr}')\">Copy</button>");
+                html.AppendLine($"    <button onclick=\"Copy('code{code.Nr}')\">Copy</button>");
                 html.Append(code.GetCodeHtml());
-                html.Append("                           <br>");
+                html.AppendLine("    <br>");
             }
-        html.AppendLine("                       </p>");
-        html.AppendLine("                    </li>");
+        html.AppendLine("    </p>");
+        html.AppendLine("</li>");
         return html.ToString();
     }
 
