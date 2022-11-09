@@ -8,7 +8,7 @@ var tool = new TutorialData();
 var gen = new HtmlGen();
 var fileNames = new string[] { 
     "deploy-voting-app", "azure-sql-db"
-    , "ssms-connect-az-sql-db", "db-restore-az-sql"
+    , "ssms-connect-az-sql-db", "web-app-azure"
     , "cpp-compiler" 
     };
 //var select = fileNames[2];
