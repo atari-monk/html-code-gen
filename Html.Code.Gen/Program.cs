@@ -1,7 +1,7 @@
 ﻿using Html.Code.Gen.Lib;
 using Html.Code.Gen.Lib.Serialize;
 
-var root =  @"C:\atari-monk\Apps.Data\html-code-gen\";
+var root =  @"C:\atari-monk\apps-data\html-code-gen\";
 var files = new Deserizalizer().Deserialize<FileDto>(root + "files.json");
 Console.WriteLine("Generating html templates...");
 var tool = new TutorialData();

@@ -3,7 +3,7 @@ namespace Html.Code.Gen.Lib.Serialize;
 public class FilesSerizalizer
     : Serizalizer
 {
-    private readonly string root = @"C:\atari-monk\Apps.Data\html-code-gen\";
+    private readonly string root = @"C:\atari-monk\apps-data\html-code-gen\";
     private readonly string key = "deploy-voting-app";
     private readonly string path;
     private readonly Dictionary<string, FileDto> files;

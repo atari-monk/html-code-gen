@@ -8,7 +8,7 @@ public class TutorialSerizalizer
 
     public TutorialSerizalizer()
     {
-        root = @"C:\atari-monk\Apps.Data\html-code-gen\";
+        root = @"C:\atari-monk\apps-data\html-code-gen\";
     }
 
     public void GetJsonFromTestData()
