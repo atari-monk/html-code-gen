@@ -8,9 +8,9 @@ var tool = new TutorialData();
 var gen = new HtmlGen();
 var fileNames = new string[] {
     "azure-sql-db", "cpp-compiler", "local-nugets",
-    "new-github-repo", "schema", "secrets",
-    "ssms-azure", "todo-app-azure", "voting-app-azure",
-    "web-app-dotnet-upgrade"
+    "new-github-repo", "node-js-azure", "schema",
+    "secrets", "ssms-azure", "todo-app-azure",
+    "voting-app-azure", "web-app-dotnet-upgrade"
     };
 //var select = fileNames[2];
 foreach (var file in files)
