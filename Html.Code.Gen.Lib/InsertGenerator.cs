@@ -1,12 +1,14 @@
 namespace Html.Code.Gen.Lib;
 
-public class TableGenerator : IHtmlGeneratorAsync
+public class InsertGenerator : IHtmlGeneratorAsync
 {
     private readonly IAsyncEnumerable<string> data;
+    private readonly int columns;
 
-    public TableGenerator(string path)
+    public InsertGenerator(string path, int columns)
     {
         data = File.ReadLinesAsync(path);
+        this.columns = columns;
     }
 
     public async Task GenerateHtmlFilesAsync()
@@ -19,21 +21,21 @@ public class TableGenerator : IHtmlGeneratorAsync
         Console.WriteLine();
         await foreach (var line in data)
         {
-            Console.WriteLine("<tr>");
+            Console.Write("(");
             var i = 0;
             foreach (var item in line.Split(','))
             {
-                if (i == 0)
-                {
-                    Console.WriteLine("<th scope='row'>" + item + "</th>");
-                }
+                if (i == 0) { }
                 else
                 {
-                    Console.WriteLine("<td>" + item + "</td>");
+                    if (i < columns)
+                        Console.Write("'" + item + "',");
+                    if (i == columns)
+                        Console.Write("'" + item + "'");
                 }
                 i++;
             }
-            Console.WriteLine("</tr>");
+            Console.WriteLine("),");
         }
     }
 }
