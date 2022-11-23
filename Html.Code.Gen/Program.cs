@@ -1,10 +1,13 @@
 ﻿using Html.Code.Gen.Lib;
 
-IHtmlGenerator generator = new TutorialsGenerator();
-generator.GenerateHtmlFiles();
+// IHtmlGenerator generator = new TutorialsGenerator();
+// generator.GenerateHtmlFiles();
 
 // var filesScheme = new FilesSerizalizer();
 // filesScheme.SerializeSchema();
 
 // var dataJson = new TutorialSerizalizer();
 // dataJson.GetJsonFromTestList();
+
+IHtmlGeneratorAsync generator = new TableGenerator();
+await generator.GenerateHtmlFilesAsync();
