@@ -4,9 +4,9 @@ public class TableGenerator : IHtmlGeneratorAsync
 {
     private readonly IAsyncEnumerable<string> data;
 
-    public TableGenerator()
+    public TableGenerator(string path)
     {
-        data = File.ReadLinesAsync(@"C:\atari-monk\Code\sql\Task1\person.txt");
+        data = File.ReadLinesAsync(path);
     }
 
     public async Task GenerateHtmlFilesAsync()
